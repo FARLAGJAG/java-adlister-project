@@ -52,12 +52,11 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-    public Long delete(Ad ad) {
+    public Long delete(int id) {
         try {
-            long id = ad.getId();
             String deleteQuery = "DELETE FROM ad WHERE id LIKE ?";
             PreparedStatement stmt = connection.prepareStatement(deleteQuery);
-            stmt.setLong(1, id);
+            stmt.setInt(1, id);
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -113,5 +112,6 @@ public class MySQLAdsDao implements Ads {
 
     public static void main(String[] args) {
         System.out.println(DaoFactory.getAdsDao().findById(1));
+//        System.out.println(DaoFactory.getAdsDao().delete(1));
     }
 }
