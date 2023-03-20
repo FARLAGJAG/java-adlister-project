@@ -10,6 +10,6 @@ public interface Ads {
     // insert a new ad and return the new ad's id
     Long insert(Ad ad);
     Long delete(Ad ad);
-    Long update(Ad ad);
-    Ad findById(Long id);
+//    Long update(Ad ad);
+    Ad findById(int id);
 }

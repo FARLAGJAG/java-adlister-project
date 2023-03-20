@@ -81,13 +81,14 @@ public class MySQLAdsDao implements Ads {
 
 
     @Override
-    public Ad findById(Long id) {
+    public Ad findById(int id) {
         try {
         String searchQuery = "SELECT * FROM ad WHERE id LIKE ?";
             PreparedStatement stmt = connection.prepareStatement(searchQuery);
             stmt.setLong(1, id);
             ResultSet rs = stmt.executeQuery();
-            return (Ad) rs;
+            rs.next();
+            return extractAd(rs);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -110,4 +111,7 @@ public class MySQLAdsDao implements Ads {
         return ads;
     }
 
+    public static void main(String[] args) {
+        System.out.println(DaoFactory.getAdsDao().findById(1));
+    }
 }
