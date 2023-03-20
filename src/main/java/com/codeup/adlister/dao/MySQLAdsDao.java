@@ -38,12 +38,11 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Long insert(Ad ad) {
         try {
-            String insertQuery = "INSERT INTO ad(user_id, title, description,item_condition,brand_id) VALUES (?, ?, ?,?)";
+            String insertQuery = "INSERT INTO ad(title, description,item_condition, brand_id) VALUES (?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
-            stmt.setLong(1, ad.getUserId());
-            stmt.setString(2, ad.getTitle());
-            stmt.setString(3, ad.getDescription());
-            stmt.setString(4, ad.getItemCondition());
+            stmt.setString(1, ad.getTitle());
+            stmt.setString(2, ad.getDescription());
+            stmt.setString(3, ad.getItemCondition());
             stmt.setInt(4, ad.getBrandId());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
@@ -97,10 +96,12 @@ public class MySQLAdsDao implements Ads {
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
-            rs.getLong("id"),
-            rs.getLong("user_id"),
+
             rs.getString("title"),
-            rs.getString("description")
+            rs.getString("description"),
+            rs.getString("item_condition"),
+                rs.getInt("userId"),
+                rs.getInt("brand_id")
         );
     }
 
@@ -115,7 +116,7 @@ public class MySQLAdsDao implements Ads {
     public static void main(String[] args) {
 //        System.out.println(DaoFactory.getAdsDao().findById(1));
 //        System.out.println(DaoFactory.getAdsDao().delete(1));
-        Ad ad = new Ad(1,"helpme","ow","good",1);
+        Ad ad = new Ad("TEST-title","TEST-dEs", "TEST-con", 1,1);
         DaoFactory.getAdsDao().insert(ad);
     }
 }
