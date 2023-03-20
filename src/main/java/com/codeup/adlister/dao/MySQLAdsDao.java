@@ -68,11 +68,19 @@ public class MySQLAdsDao implements Ads {
         return 0L;
     }
 
-    public Long update (Ad ad) {
-        Long id = ad.getId();
-        String updateQuery = "UPDATE ad SET column1 = ?, column2 = ? WHERE ?";
-        PreparedStatement stmt = connection.prepareStatement();
-    }
+//    public Long update (Ad ad) {
+//        try {
+//        Long id = ad.getId();
+//        String updateQuery = "UPDATE ad SET title = ?, description = ? WHERE ?";
+//        PreparedStatement stmt = connection.prepareStatement(updateQuery);
+//        stmt.setSting(1, (PLACE_HOLDER));
+//        stmt.setSting(2, (PLACE_HOLDER));
+//        stmt.setSting(3, (PLACE_HOLDER));
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//        return 0L;
+//    }
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
