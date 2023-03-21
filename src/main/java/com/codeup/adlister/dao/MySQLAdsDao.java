@@ -28,7 +28,7 @@ public class MySQLAdsDao implements Ads {
     public List<Ad> all() {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads");
+            stmt = connection.prepareStatement("SELECT * FROM ad");
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
@@ -116,10 +116,10 @@ public class MySQLAdsDao implements Ads {
     }
 
     public static void main(String[] args) {
-//        System.out.println(DaoFactory.getAdsDao().findById(1));
-//        System.out.println(DaoFactory.getAdsDao().delete(1));
-
         Ad ad = new Ad("TEST-title","TEST-dEs", "TEST-con", 1,1);
-        DaoFactory.getAdsDao().insert(ad);
+//        DaoFactory.getAdsDao().delete(3);
+        System.out.println(DaoFactory.getAdsDao().findById(2).getTitle());
+        System.out.println(DaoFactory.getAdsDao().all());
+
     }
 }
