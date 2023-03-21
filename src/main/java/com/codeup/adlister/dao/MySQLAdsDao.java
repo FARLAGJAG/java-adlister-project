@@ -96,6 +96,20 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    public Ad findByBrandId(int brand_id) {
+        try {
+            String searchQuery = "SELECT * FROM ads WHERE brand_id LIKE ?";
+            PreparedStatement stmt = connection.prepareStatement(searchQuery);
+            stmt.setLong(1, brand_id);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            return extractAd(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
 
@@ -129,10 +143,11 @@ public class MySQLAdsDao implements Ads {
 
 
     public static void main(String[] args) {
-        Ad ad = new Ad("TEST-title","TEST-dEs", "TEST-con", 1,1);
+//        Ad ad = new Ad("TEST-title","TEST-dEs", "TEST-con", 1,1);
 //        DaoFactory.getAdsDao().delete(3);
-        System.out.println(DaoFactory.getAdsDao().findById(2).getTitle());
-        System.out.println(DaoFactory.getAdsDao().all());
+//        System.out.println(DaoFactory.getAdsDao().findById(2).getTitle());
+//        System.out.println(DaoFactory.getAdsDao().all());
+        System.out.println(DaoFactory.getAdsDao().findByBrandId(4));
 
     }
 }
