@@ -1,37 +1,49 @@
 package com.codeup.adlister.models;
 
 public class Ad {
-    private long id;
-    private long userId;
+    private int id;
+    private int userId;
     private String title;
     private String description;
 
-    public Ad(long id, long userId, String title, String description) {
-        this.id = id;
+    private String item_condition;
+
+    private int brand_id;
+
+    public Ad() {
+
+    }
+    public Ad(int userId, String title, String description, String item_condition) {
         this.userId = userId;
         this.title = title;
         this.description = description;
+        this.item_condition = item_condition;
     }
 
-    public Ad(long userId, String title, String description) {
-        this.userId = userId;
+    public Ad(String title, String description, String item_condition, int userId, int brand_id) {
         this.title = title;
         this.description = description;
+        this.item_condition = item_condition;
+        this.userId = userId;
+        this.brand_id = brand_id;
     }
 
-    public long getId() {
+    public Ad(String title, String description, String item_condition) {
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public long getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
@@ -49,5 +61,21 @@ public class Ad {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getItemCondition() {
+        return item_condition;
+    }
+
+    public void setItemCondition(String item) {
+        this.item_condition = item_condition;
+    }
+
+    public int getBrandId(){
+        return brand_id;
+    }
+
+    public void setBrandId(int brand_id){
+        this.brand_id = brand_id;
     }
 }

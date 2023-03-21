@@ -1,11 +1,9 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +28,7 @@ public class MySQLAdsDao implements Ads {
     public List<Ad> all() {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads");
+            stmt = connection.prepareStatement("SELECT * FROM ad");
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
@@ -41,11 +39,13 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Long insert(Ad ad) {
         try {
-            String insertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
+            String insertQuery = "INSERT INTO ad(title, description,item_condition,userId, brand_id) VALUES (?, ?, ?,?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
-            stmt.setLong(1, ad.getUserId());
-            stmt.setString(2, ad.getTitle());
-            stmt.setString(3, ad.getDescription());
+            stmt.setString(1, ad.getTitle());
+            stmt.setString(2, ad.getDescription());
+            stmt.setString(3, ad.getItemCondition());
+            stmt.setInt(4, ad.getUserId());
+            stmt.setInt(5, ad.getBrandId());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -55,12 +55,55 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    public Long delete(int id) {
+        try {
+            String deleteQuery = "DELETE FROM ad WHERE id LIKE ?";
+            PreparedStatement stmt = connection.prepareStatement(deleteQuery);
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return 0L;
+    }
+
+//    public Long update (Ad ad) {
+//        try {
+//        Long id = ad.getId();
+//        String updateQuery = "UPDATE ad SET title = ?, description = ? WHERE ?";
+//        PreparedStatement stmt = connection.prepareStatement(updateQuery);
+//        stmt.setSting(1, (PLACE_HOLDER));
+//        stmt.setSting(2, (PLACE_HOLDER));
+//        stmt.setSting(3, (PLACE_HOLDER));
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//        return 0L;
+//    }
+
+
+    @Override
+    public Ad findById(int id) {
+        try {
+        String searchQuery = "SELECT * FROM ad WHERE id LIKE ?";
+            PreparedStatement stmt = connection.prepareStatement(searchQuery);
+            stmt.setLong(1, id);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            return extractAd(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
-            rs.getLong("id"),
-            rs.getLong("user_id"),
+
             rs.getString("title"),
-            rs.getString("description")
+            rs.getString("description"),
+            rs.getString("item_condition"),
+                rs.getInt("userId"),
+                rs.getInt("brand_id")
         );
     }
 
@@ -70,5 +113,13 @@ public class MySQLAdsDao implements Ads {
             ads.add(extractAd(rs));
         }
         return ads;
+    }
+
+    public static void main(String[] args) {
+        Ad ad = new Ad("TEST-title","TEST-dEs", "TEST-con", 1,1);
+//        DaoFactory.getAdsDao().delete(3);
+        System.out.println(DaoFactory.getAdsDao().findById(2).getTitle());
+        System.out.println(DaoFactory.getAdsDao().all());
+
     }
 }
