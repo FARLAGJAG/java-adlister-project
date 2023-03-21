@@ -9,6 +9,11 @@
         justify-content: center;
         margin-top: 1em;
     }
+.address{
+    display: flex;
+    justify-content: end;
+    margin-top: 1em;
+}
 </style>
 <footer class=" container-fluid footer bg-body-secondary px-5 pt-2">
     <section class="row d-flex justify-content-center">
@@ -23,8 +28,8 @@
             </p>
         </div>
         <div class="footer-info col-4 ">
-            <h3 class="">Categories</h3>
-            <ul class="">
+            <h3 class="d-flex justify-content-center">Categories</h3>
+            <ul class="list-group">
                 <li class="list-unstyled "><a class="dropdown-item" href="#">SEGA</a></li>
                 <li class="list-unstyled "><a class="dropdown-item" href="#">NINTENDO</a></li>
                 <li class="list-unstyled "><a class="dropdown-item" href="#">PLAYSTATION</a></li>
@@ -32,12 +37,12 @@
             </ul>
         </div>
         <div class=" col-4 ">
-            <h3 class="">Company Info</h3>
+            <h3 class="d-flex justify-content-end">Company Info</h3>
             <ul class="list">
-                <li class="list-group-item">600 Navarro St #300 </li>
-                <li class="list-group-item">San Antonio, Texas 78205</li>
-                <li class="list-group-item">(210) 802-7289</li>
-                <li class="list-group-item"><a href="https://www.google.com/search?q=code+up&oq=code+up&aqs=chrome.0.0i131i355i433i512j46i131i175i199i433i512j46i20i131i263i433i512j0i131i433j0i512j69i60l3.4664j0j7&sourceid=chrome&ie=UTF-8#lrd=0x865c5f53ae9da8c7:0xfdc2b9d926713c13,1,,,,">Google Reviews</a></li>
+                <li class="address list-group-item">600 Navarro St #300 </li>
+                <li class="address list-group-item">San Antonio, Texas 78205</li>
+                <li class="address list-group-item">(210) 802-7289</li>
+                <li class="address list-group-item"><a href="https://www.google.com/search?q=code+up&oq=code+up&aqs=chrome.0.0i131i355i433i512j46i131i175i199i433i512j46i20i131i263i433i512j0i131i433j0i512j69i60l3.4664j0j7&sourceid=chrome&ie=UTF-8#lrd=0x865c5f53ae9da8c7:0xfdc2b9d926713c13,1,,,,">Google Reviews</a></li>
             </ul>
         </div>
     </section>

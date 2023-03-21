@@ -17,7 +17,7 @@ a.log {
 </style>
 <nav class="navbar navbar-expand-lg bg-body-secondary sticky-top">
     <div class="container-fluid">
-        <a class="logo navbar-brand" href="/index.jsp">< GEN * CON ></a>
+        <a class="logo navbar-brand" href="/">< GEN * CON ></a>
         <div class="collapse navbar d-flex " id="navbarSupportedContent">
             <div class="me-4">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
