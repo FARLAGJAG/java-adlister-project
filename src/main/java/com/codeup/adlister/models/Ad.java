@@ -28,6 +28,9 @@ public class Ad {
         this.brand_id = brand_id;
     }
 
+    public Ad(String title, String description, String item_condition) {
+    }
+
     public int getId() {
         return id;
     }

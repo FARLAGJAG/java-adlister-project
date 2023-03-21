@@ -1,6 +1,7 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
@@ -38,12 +39,13 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Long insert(Ad ad) {
         try {
-            String insertQuery = "INSERT INTO ad(title, description,item_condition, brand_id) VALUES (?, ?, ?, ?)";
+            String insertQuery = "INSERT INTO ad(title, description,item_condition,userId, brand_id) VALUES (?, ?, ?,?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, ad.getTitle());
             stmt.setString(2, ad.getDescription());
             stmt.setString(3, ad.getItemCondition());
-            stmt.setInt(4, ad.getBrandId());
+            stmt.setInt(4, ad.getUserId());
+            stmt.setInt(5, ad.getBrandId());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -116,6 +118,7 @@ public class MySQLAdsDao implements Ads {
     public static void main(String[] args) {
 //        System.out.println(DaoFactory.getAdsDao().findById(1));
 //        System.out.println(DaoFactory.getAdsDao().delete(1));
+
         Ad ad = new Ad("TEST-title","TEST-dEs", "TEST-con", 1,1);
         DaoFactory.getAdsDao().insert(ad);
     }
