@@ -1,5 +1,7 @@
 USE gen_con_db;
 
+
+
 DROP TABLE IF EXISTS ad;
 DROP TABLE IF EXISTS brand;
 DROP TABLE IF EXISTS user;
