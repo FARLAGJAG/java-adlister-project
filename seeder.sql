@@ -15,6 +15,7 @@ INSERT INTO brand (name)
 VALUES ('Playstation');
 
 # two ads
+
 INSERT INTO ad (title, description, item_condition, brand_id, userId)
 VALUES ('Blue game cube', 'New in the box, ready to ROCK!, shipped from japan. INCLUDES SMASH BROS you can get smashed by my diddy', 'new', '2', '1');
 

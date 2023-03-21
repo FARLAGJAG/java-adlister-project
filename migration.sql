@@ -28,6 +28,8 @@ CREATE TABLE ad
     item_condition VARCHAR(10)  NOT NULL,
     brand_id       INT UNSIGNED NOT NULL,
     FOREIGN KEY (brand_id) REFERENCES brand (id),
+
     userId        INT UNSIGNED NOT NULL,
     FOREIGN KEY (userId) REFERENCES user (id)
+
 );
