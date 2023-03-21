@@ -22,4 +22,10 @@ VALUES ('Blue game cube', 'New in the box, ready to ROCK!, shipped from japan. I
 INSERT INTO ads (title, description, item_condition, brand_id, user_id)
 VALUES ('OG XBOX!', 'Where it all began! HALO enough said, dont be cheap!', 'used', '3', '1');
 
+INSERT INTO ads (title, description, item_condition, brand_id, user_id)
+VALUES ('BRAND NEW SEGA DREAM CAST', 'NEVER OPENED NEVER USED PRO', 'NEW', '1', '1');
+
+INSERT INTO ads (title, description, item_condition, brand_id, user_id)
+VALUES ('ps1 for sale', 'the original ps1', 'used', '4', '1');
+
 
