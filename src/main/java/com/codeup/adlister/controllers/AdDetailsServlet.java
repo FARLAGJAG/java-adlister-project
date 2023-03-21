@@ -18,6 +18,8 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.util.List;
 
+import static java.lang.Integer.parseInt;
+
 @WebServlet("/details")
 public class AdDetailsServlet extends HttpServlet {
     @Override
@@ -28,14 +30,12 @@ public class AdDetailsServlet extends HttpServlet {
             Connection connection = new MySQLAdsDao(new Config);
             // make query SELECT * FROM ad WHERE id LIKE (ID_OF_AD) //
             String showDetailsQuery = "SELECT * FROM ad WHERE id LIKE ?";
-
             PreparedStatement stmt = connection.prepareStatement(showDetailsQuery);
-            stmt.setInt(getParameter(""));
-
+            int thisId = parseInt(req.getParameter("id"));
+            stmt.setInt(1, thisId);
             ResultSet rs = stmt.executeQuery(showDetailsQuery);
             rs.next();
             Ad ad = extractAd(rs);
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
