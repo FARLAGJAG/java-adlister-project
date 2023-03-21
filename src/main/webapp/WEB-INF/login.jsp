@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -5,9 +6,16 @@
         <jsp:param name="title" value="Please Log In" />
     </jsp:include>
 </head>
+<style>
+    .login{
+        height: 50vh;
+        /*border: 1px solid red;*/
+    }
+</style>
 <body>
+<div class="page-wrapper">
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div class="container">
+    <div class="login container">
         <h1>Please Log In</h1>
         <form action="/login" method="POST">
             <div class="form-group">
@@ -21,7 +29,8 @@
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
         </form>
     </div>
-    <jsp:include page="/WEB-INF/partials/footer.jsp" />
-
+    <jsp:include page="/WEB-INF/partials/footer.jsp"/>
+    <jsp:include page="/WEB-INF/partials/scripts.jsp" />
+</div>
 </body>
 </html>

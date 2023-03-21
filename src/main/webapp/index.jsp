@@ -13,6 +13,7 @@
     }
 </style>
 <body>
+<div class="page-wrapper">
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
         <h1>Welcome to the GEN*CON!</h1>
@@ -20,5 +21,6 @@
     </div>
 <jsp:include page="/WEB-INF/partials/footer.jsp"/>
 <jsp:include page="/WEB-INF/partials/scripts.jsp" />
+</div>
 </body>
 </html>
