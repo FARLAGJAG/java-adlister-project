@@ -9,7 +9,7 @@
     <jsp:include page="partials/navbar.jsp" />
     <div class="container">
         <h1>Please fill in your information.</h1>
-        <form action="/register" method="post">
+        <form action="/register" method="POST">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input id="username" name="username" class="form-control" type="text">
@@ -26,7 +26,7 @@
                 <label for="confirm_password">Confirm Password</label>
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password">
             </div>
-            <input type="submit" class="btn btn-primary btn-block">
+            <input type="submit" class="btn btn-primary btn-block mt-3">
         </form>
     </div>
 </body>

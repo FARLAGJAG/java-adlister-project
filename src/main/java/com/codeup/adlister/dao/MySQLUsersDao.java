@@ -51,6 +51,36 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+    public Long delete(String username){
+        try {
+            String deleteQuery = "DELETE FROM users WHERE username LIKE ?";
+            PreparedStatement stmt = connection.prepareStatement(deleteQuery);
+            stmt.setString(1, username);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return 0L;
+    }
+
+    public Long update (User user) {
+        try {
+            int id = user.getId();
+            String updateQuery = "UPDATE users SET username = ?, email = ? WHERE id like ?";
+            PreparedStatement stmt = connection.prepareStatement(updateQuery);
+            stmt.setString(1, ("me"));
+            stmt.setString(2, ("me@gmail"));
+            stmt.setInt(3, (4));
+
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return 0L;
+    }
+
+
+
     private User extractUser(ResultSet rs) throws SQLException {
         if (! rs.next()) {
             return null;
@@ -61,6 +91,11 @@ public class MySQLUsersDao implements Users {
             rs.getString("email"),
             rs.getString("password")
         );
+    }
+
+
+    public static void main(String[] args) {
+
     }
 
 }

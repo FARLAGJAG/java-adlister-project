@@ -70,12 +70,15 @@ public class MySQLAdsDao implements Ads {
 //    public void update (Ad ad) {
 //        try {
 //        int id = ad.getId();
+
 //        String updateQuery = "UPDATE ads SET title = ?, description = ?, item_condition = ? WHERE id LIKE ?";
+
+
 //        PreparedStatement stmt = connection.prepareStatement(updateQuery);
 //        stmt.setSting(1, (getParamater("PLACE_HOLDER")));
 //        stmt.setSting(2, (PLACE_HOLDER));
-//        stmt.setSting(3, (PLACE_HOLDER));
-//        stmt.setInt(4, id);
+//        stmt.setInt(3, (id));
+//        stmt.executeUpdate();
 //        } catch (SQLException e) {
 //            throw new RuntimeException(e);
 //        }
