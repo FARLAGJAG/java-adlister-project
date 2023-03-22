@@ -22,6 +22,7 @@ public class EditProfileServlet extends HttpServlet {
         String email = req.getParameter("email");
         DaoFactory.getUsersDao().update(username, email,id);
 
-
     }
+
+
 }
