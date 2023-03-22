@@ -13,24 +13,28 @@
         background: linear-gradient(91.7deg, rgb(50, 25, 79) -4.3%, rgb(122, 101, 149) 101.8%);
         padding-top: 1em;
     }
-    .top-img{
+
+    .top-img {
         background-image: url("./img/retro-console-pic.jpeg");
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: center;
     }
+
     .extend {
         height: 25vh;
         width: 100%;
     }
-    .top-img-banner{
+
+    .top-img-banner {
         display: flex;
         justify-content: center;
         color: white;
         background-color: rgba(38, 20, 80, 0.51);
         width: 50%;
     }
-    h1{
+
+    h1 {
         margin-top: 2em;
     }
 </style>

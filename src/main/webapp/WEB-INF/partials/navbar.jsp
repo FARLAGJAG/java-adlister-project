@@ -12,6 +12,16 @@ body{
     color: white;
 }
 
+.profile {
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: whitesmoke;
+    background: linear-gradient(89.7deg, rgb(0, 32, 95) 2.8%, rgb(132, 53, 142) 97.8%);
+}
+
+.shadow {
+    box-shadow: 3px 3px white, -1em 0 .4em whitesmoke;
+}
+
 .color{
     color: white;
 }
