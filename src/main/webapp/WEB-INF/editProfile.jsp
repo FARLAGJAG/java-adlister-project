@@ -14,7 +14,7 @@
         <jsp:param name="GEN*CON" value="GEN*CON"/>
     </jsp:include>
 </head>
-<body>
+<body class="user-style">
     <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
     <div class="vh-75">
         <h1>EDIT PROFILE</h1>
