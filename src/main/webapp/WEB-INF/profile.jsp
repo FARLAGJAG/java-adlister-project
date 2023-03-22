@@ -9,7 +9,7 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<div class="page-wrapper profile">
+<div class="page-wrapper user-style">
     <div class="container">
         <div class="row">
             <div class="column d-flex justify-content-center m-5">
