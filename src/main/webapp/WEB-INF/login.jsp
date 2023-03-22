@@ -26,11 +26,11 @@
                 <label for="password">Password</label>
                 <input id="password" name="password" class="form-control" type="password">
             </div>
-            <input type="submit" class="btn btn-primary btn-block mt-3" value="Log In">
+            <input type="submit" class="btn btn-dark btn-block mt-3" value="Log In">
         </form>
         <p>Don't have an account? Click below to create a new account.</p>
         <form action="/register" method="GET">
-            <input type="submit" class="btn btn-primary btn-block" value="Create an account">
+            <input type="submit" class="btn btn-dark btn-block" value="Create an account">
         </form>
     </div>
 </div>

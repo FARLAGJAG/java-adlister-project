@@ -31,7 +31,7 @@
                 <label for="confirm_password">Confirm Password</label>
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password">
             </div>
-            <input type="submit" class="btn btn-primary btn-block mt-3">
+            <input type="submit" class="btn btn-dark btn-block mt-3">
         </form>
     </div>
     <jsp:include page="/WEB-INF/partials/footer.jsp" />

@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <style>
 body{
-    height: 100vh;
+    /*height: 100%;*/
 }
 
 .logo {
@@ -27,7 +27,7 @@ a.log {
 </style>
 <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container-fluid">
-        <a class="logo color navbar-brand" href="/">< GEN * CON ></a>
+        <a class="logo color navbar-brand" href="/">GEN  <img src="/img/logo.png" style="height: 1.5em" width="auto">  CON</a>
         <div class="collapse navbar d-flex " id="navbarSupportedContent">
             <div class="me-4">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
