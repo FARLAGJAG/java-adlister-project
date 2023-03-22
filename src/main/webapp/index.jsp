@@ -14,23 +14,27 @@
     }
     .top-img{
         background-image: url("./img/retro-consol.png");
+
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: center;
         background-size: contain;
     }
+
     .extend {
         height: 25vh;
         width: 100%;
     }
-    .top-img-banner{
+
+    .top-img-banner {
         display: flex;
         justify-content: center;
         color: white;
         background-color: rgba(38, 20, 80, 0.51);
         width: 50%;
     }
-    h1{
+
+    h1 {
         margin-top: 2em;
     }
     .card-bg {
