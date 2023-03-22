@@ -18,7 +18,7 @@ body{
 }
 
 .shadow {
-    box-shadow: 3px 3px white, -1em 0 .4em whitesmoke;
+    box-shadow: 0px 0px 20px 0px white !important;
 }
 
 .color{
