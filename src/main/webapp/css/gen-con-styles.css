@@ -60,7 +60,7 @@ a.log {
 }
 
 .extend {
-    height: 25vh;
+    height: 40vh;
     width: 100%;
 }
 
@@ -78,7 +78,7 @@ a.log {
 }
 
 /********************** Login **********************/
-#login {
+#moreHeight {
     height: 60%;
 }
 

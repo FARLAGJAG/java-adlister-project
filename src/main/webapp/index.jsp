@@ -10,9 +10,9 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <%--    <div class="page-wrapper ">--%>
 <div class="row">
-    <div class=" top-img">
-        <div class=" extend mt-3">
-            <h1 class="container top-img-banner ">WELCOME TO GEN*CON!</h1>
+    <div class="top-img">
+        <div class="extend ">
+            <h1 class="container top-img-banner mt-5">WELCOME TO GEN*CON!</h1>
             <h2 class="container top-img-banner">Home of the largest selection of retro gaming.</h2>
         </div>
     </div>
