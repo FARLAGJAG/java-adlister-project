@@ -45,6 +45,7 @@
         <div class=" col-4 ">
             <h3 class="d-flex justify-content-end">Company Info</h3>
             <ul class="list">
+                <li class="address list-group-item">Gen-Con, LLC </li>
                 <li class="address list-group-item">600 Navarro St #300 </li>
                 <li class="address list-group-item">San Antonio, Texas 78205</li>
                 <li class="address list-group-item">(210) 802-7289</li>
