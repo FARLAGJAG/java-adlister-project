@@ -9,7 +9,9 @@
 <style>
     .sample {
         height: 100vh;
-        border: 1px solid red;
+        box-shadow: inset 5px 5px 30px 15px black;
+        background: linear-gradient(91.7deg, rgb(50, 25, 79) -4.3%, rgb(122, 101, 149) 101.8%);
+        padding-top: 1em;
     }
     .top-img{
         background-image: url("./img/retro-console-pic.jpeg");
@@ -32,7 +34,7 @@
         margin-top: 2em;
     }
 </style>
-<body>
+<body class="bg-body-dark">
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="page-wrapper">
     <div class="sample">
