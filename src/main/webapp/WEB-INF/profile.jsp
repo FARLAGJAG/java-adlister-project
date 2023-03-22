@@ -40,6 +40,10 @@
                         <h2>>${ad.title}</h2>
                         <p>${ad.description}</p>
                     </div>
+                    <div>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </div>
                 </c:forEach>
             </div>
         </div>
