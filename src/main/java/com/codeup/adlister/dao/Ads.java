@@ -13,5 +13,5 @@ public interface Ads {
 //    Long update(Ad ad);
     Ad findById(int id);
 
-    Ad findByBrandId(int i);
+    List<Ad> findByBrandId(int i);
 }
