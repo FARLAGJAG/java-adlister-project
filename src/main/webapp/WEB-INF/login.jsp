@@ -2,21 +2,15 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Please Log In" />
+        <jsp:param name="title" value="Please Log In"/>
     </jsp:include>
 </head>
-<style>
-    .login{
-        height: 60%;
-    }
-
-</style>
 
 <body>
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div class="login">
-    <div class="container mt-3">
-        <h1 class="">Please Log In</h1>
+<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+    <div id="login" class="container">
+
+        <h1>Please Log In</h1>
         <form action="/login" method="POST">
             <div class="form-group">
                 <label for="username">Username</label>
@@ -33,8 +27,7 @@
             <input type="submit" class="btn btn-dark btn-block" value="Create an account">
         </form>
     </div>
-</div>
-    <jsp:include page="/WEB-INF/partials/footer.jsp" />
-    <jsp:include page="/WEB-INF/partials/scripts.jsp" />
+<jsp:include page="/WEB-INF/partials/footer.jsp"/>
+<jsp:include page="/WEB-INF/partials/scripts.jsp"/>
 </body>
 </html>
