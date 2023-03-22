@@ -8,7 +8,7 @@
 
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-    <div id="login" class="container">
+    <div id="moreHeight" class="container">
 
         <h1>Please Log In</h1>
         <form action="/login" method="POST">
