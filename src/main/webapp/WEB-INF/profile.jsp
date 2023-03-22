@@ -26,8 +26,8 @@
                 <a href="<c:url value="./ads/index.jsp"/>"></a>
 
                 <section class="d-flex justify-content-center">
-                    <button class="btn btn-primary btn-sm me-3" type="button" id="editProfile">Edit</button>
-                    <button class="btn btn-primary btn-sm" type="button" id="deleteProfile">Delete</button>
+                    <button class="btn btn-primary btn-sm me-3" type="button" id="editProfile" href="/editProfile">Edit</button>
+                    <button class="btn btn-primary btn-sm" type="button" id="deleteProfile" href="/deleteProfile">Delete</button>
                 </section>
                 </div>
             </div>
