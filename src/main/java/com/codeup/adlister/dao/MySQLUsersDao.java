@@ -2,6 +2,7 @@ package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
+import com.mysql.cj.xdevapi.Session;
 
 import java.sql.*;
 
@@ -63,14 +64,13 @@ public class MySQLUsersDao implements Users {
         return 0L;
     }
 
-    public Long update (User user) {
+    public Long update (String username, String email, int id) {
         try {
-            int id = user.getId();
             String updateQuery = "UPDATE users SET username = ?, email = ? WHERE id like ?";
             PreparedStatement stmt = connection.prepareStatement(updateQuery);
-            stmt.setString(1, ("me"));
-            stmt.setString(2, ("me@gmail"));
-            stmt.setInt(3, (4));
+            stmt.setString(1, (username));
+            stmt.setString(2, (email));
+            stmt.setInt(3, (id));
 
             stmt.executeUpdate();
         } catch (SQLException e) {
