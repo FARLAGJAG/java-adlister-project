@@ -28,7 +28,7 @@ public class MySQLAdsDao implements Ads {
     public List<Ad> all() {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ad");
+            stmt = connection.prepareStatement("SELECT * FROM ads");
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
@@ -39,7 +39,7 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Long insert(Ad ad) {
         try {
-            String insertQuery = "INSERT INTO ad(title, description,item_condition,userId, brand_id) VALUES (?, ?, ?,?, ?)";
+            String insertQuery = "INSERT INTO ads(title, description,item_condition,user_id, brand_id) VALUES (?, ?, ?,?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, ad.getTitle());
             stmt.setString(2, ad.getDescription());
@@ -57,7 +57,7 @@ public class MySQLAdsDao implements Ads {
 
     public Long delete(int id) {
         try {
-            String deleteQuery = "DELETE FROM ad WHERE id LIKE ?";
+            String deleteQuery = "DELETE FROM ads WHERE id LIKE ?";
             PreparedStatement stmt = connection.prepareStatement(deleteQuery);
             stmt.setInt(1, id);
             stmt.executeUpdate();
@@ -85,7 +85,7 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Ad findById(int id) {
         try {
-        String searchQuery = "SELECT * FROM ad WHERE id LIKE ?";
+        String searchQuery = "SELECT * FROM ads WHERE id LIKE ?";
             PreparedStatement stmt = connection.prepareStatement(searchQuery);
             stmt.setLong(1, id);
             ResultSet rs = stmt.executeQuery();

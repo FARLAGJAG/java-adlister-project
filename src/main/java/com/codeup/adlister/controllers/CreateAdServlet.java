@@ -23,9 +23,9 @@ public class CreateAdServlet extends HttpServlet {
             .forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//        User user = (User) request.getSession().getAttribute("user");
-//        Brand brand = (Brand) request.getSession().getAttribute("brand");
+//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+
 //        Ad ad = new Ad(
 //
 //            request.getParameter("title"),
@@ -38,5 +38,5 @@ public class CreateAdServlet extends HttpServlet {
 //        );
 //        DaoFactory.getAdsDao().insert(ad);
 //        response.sendRedirect("/ads");
-    }
+//    }
 }
