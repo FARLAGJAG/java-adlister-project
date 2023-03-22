@@ -3,13 +3,12 @@
 <style>
 
 body{
-    height: 100vh;
+    /*height: 100%;*/
 }
 
 .logo {
     font-family: 'PT Sans Narrow', sans-serif;
     font-size: 3em;
-    color: white;
 }
 
 .profile {
@@ -25,10 +24,12 @@ body{
 .color{
     color: white;
 }
+.color:hover{
+    color: goldenrod;
+}
 
 a.log {
     text-decoration: none;
-    color: white;
 }
 .navbar{
     background-color: #1a102d;
@@ -38,7 +39,7 @@ a.log {
 </style>
 <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container-fluid">
-        <a class="logo navbar-brand" href="/">< GEN * CON ></a>
+        <a class="logo color navbar-brand" href="/">GEN  <img src="/img/logo.png" style="height: 1.5em" width="auto">  CON</a>
         <div class="collapse navbar d-flex " id="navbarSupportedContent">
             <div class="me-4">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -68,10 +69,12 @@ a.log {
             <ul class="nav navbar-nav navbar-right me-4">
                 <c:if test="${user != null}">
 
-                <li ><a class="log" href="/logout">Logout</a></li>
+                <li ><a class="log color me-3" href="/logout">Logout</a></li>
+                <li ><a class="log color" href="/profile">Profile</a></li>
+
                 </c:if>
                 <c:if test="${user == null}">
-                <li ><a class="log" href="/login">Login</a></li>
+                <li ><a class="log color" href="/login">Login</a></li>
 
                 </c:if>
             </ul>
