@@ -27,9 +27,9 @@
                 <section class="d-flex justify-content-center">
 
 <%--                    <button class="btn btn-primary btn-sm me-3" type="button" id="editProfile" >Edit</button>--%>
-                    <a class="btn btn-primary btn-sm me-3" href="/editProfile">Edit</a>
+                    <a class="btn btn-outline-secondary btn-sm me-3" href="/editProfile">Edit</a>
 <%--                    <button class="btn btn-primary btn-sm" type="button" id="deleteProfile">Delete</button>--%>
-                    <a class="btn btn-primary btn-sm me-3" href="/deleteProfile">Delete</a>
+                    <a class="btn btn-outline-secondary btn-sm me-3" href="/deleteProfile">Delete</a>
 
                 </section>
                 </div>
