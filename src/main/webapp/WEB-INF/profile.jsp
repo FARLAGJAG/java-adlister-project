@@ -26,8 +26,7 @@
     <button type="button" onclick="deleteFunction()">Delete</button>
 </section>
 
-<jsp:include page="/WEB-INF/partials/footer.jsp"
- /jsp>
+<jsp:include page="/WEB-INF/partials/footer.jsp" />
 
 </body>
 </html>
