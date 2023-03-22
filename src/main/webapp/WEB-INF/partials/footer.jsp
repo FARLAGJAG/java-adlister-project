@@ -17,11 +17,11 @@
 .footer{
     background-color: #1a102d;
 }
-    .color{
+    .colorFooter{
         color: white;
     }
 </style>
-<footer class=" color container-fluid footer  px-5 pt-2">
+<footer class=" colorFooter container-fluid footer  px-5 pt-2">
     <section class="row d-flex justify-content-center">
         <div class="footer-info col-4 ">
             <h3 class="">About Us</h3>
@@ -36,10 +36,10 @@
         <div class="footer-info col-4 ">
             <h3 class="d-flex justify-content-center">Categories</h3>
             <ul class="list-group">
-                <li class="list-unstyled "><a class="dropdown-item" href="#">SEGA</a></li>
-                <li class="list-unstyled "><a class="dropdown-item" href="#">NINTENDO</a></li>
-                <li class="list-unstyled "><a class="dropdown-item" href="#">PLAYSTATION</a></li>
-                <li class="list-unstyled "><a class="dropdown-item" href="#">XBOX</a></li>
+                <li class="list-unstyled "><a class="dropdown-item color" href="#">SEGA</a></li>
+                <li class="list-unstyled "><a class="dropdown-item color" href="#">NINTENDO</a></li>
+                <li class="list-unstyled "><a class="dropdown-item color" href="#">PLAYSTATION</a></li>
+                <li class="list-unstyled "><a class="dropdown-item color" href="#">XBOX</a></li>
             </ul>
         </div>
         <div class=" col-4 ">

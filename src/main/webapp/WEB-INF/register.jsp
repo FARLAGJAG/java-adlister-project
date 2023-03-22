@@ -5,9 +5,14 @@
         <jsp:param name="title" value="Register For Our Site!" />
     </jsp:include>
 </head>
+<style>
+.container{
+    height: 60%;
+}
+</style>
 <body>
     <jsp:include page="partials/navbar.jsp" />
-    <div class="container">
+    <div class="container mt-3">
         <h1>Please fill in your information.</h1>
         <form action="/register" method="POST">
             <div class="form-group">
@@ -29,5 +34,7 @@
             <input type="submit" class="btn btn-primary btn-block mt-3">
         </form>
     </div>
+    <jsp:include page="/WEB-INF/partials/footer.jsp" />
+    <jsp:include page="/WEB-INF/partials/scripts.jsp" />
 </body>
 </html>

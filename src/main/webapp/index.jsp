@@ -14,10 +14,11 @@
         padding-top: 1em;
     }
     .top-img{
-        background-image: url("./img/retro-console-pic.jpeg");
+        background-image: url("./img/retro-consol.png");
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: center;
+        background-size: contain;
     }
     .extend {
         height: 25vh;
@@ -33,11 +34,13 @@
     h1{
         margin-top: 2em;
     }
+    .card-bg {
+        background-color: #d2cfc3;
+    }
 </style>
 <body class="bg-body-dark">
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<div class="page-wrapper">
-    <div class="sample">
+    <div class="page-wrapper sample">
         <div class="row">
             <div class=" top-img">
                 <div class=" extend mt-3">
@@ -46,9 +49,42 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center text-light">
+                    <h2>Current Retro Deals</h2>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div class="card col-4 card-bg" style="width: 18rem; height: auto">
+                        <img src="/img/n64.png" class="card-img-top" alt="N64 Console">
+                        <div class="card-body">
+                            <h5 class="card-title">N64</h5>
+                            <p class="card-text">This Nintendo 64 system is refurbished and clean. Our systems all tested and guaranteed to work and backed by our 1 year 100% guarantee return policy.</p>
+                        </div>
+                            <a href="#" class="btn btn-primary">View Console</a>
+                    </div>
+                    <div class="card col-4 card-bg" style="width: 18rem; height: auto">
+                        <img src="/img/ps.png" class="card-img-top" alt="Playstation Console">
+                        <div class="card-body">
+                            <h5 class="card-title">Playstation</h5>
+                            <p class="card-text">This original Playstation system is refurbished and clean. Our systems all tested and guaranteed to work and backed by our 1 year 100% guarantee return policy.</p>
+                        </div>
+                            <a href="#" class="btn btn-primary">View Console</a>
+                    </div>
+                    <div class="card col-4 card-bg" style="width: 18rem; height: auto">
+                        <img src="/img/sega-genesis.png" class="card-img-top" alt="Sega Genisus Console">
+                        <div class="card-body">
+                            <h5 class="card-title">SEGA GENISUS</h5>
+                            <p class="card-text">This SEGA GENISUS system is refurbished and clean. Our systems all tested and guaranteed to work and backed by our 1 year 100% guarantee return policy.</p>
+                        </div>
+                            <a href="#" class="btn btn-primary">View Console</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-</div>
+
 <jsp:include page="/WEB-INF/partials/footer.jsp"/>
 <jsp:include page="/WEB-INF/partials/scripts.jsp"/>
 </body>
