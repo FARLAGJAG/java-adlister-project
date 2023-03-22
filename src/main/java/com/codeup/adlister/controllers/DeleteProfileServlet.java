@@ -1,6 +1,7 @@
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.models.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +16,8 @@ public class DeleteProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getSession().removeAttribute("user");
         req.getSession().invalidate();
-//        DaoFactory.getUsersDao().findByUsername(username);
+        User user = (User) req.getSession().getAttribute("user");
+        String username = user.getUsername();
         DaoFactory.getUsersDao().delete(username);
         resp.sendRedirect("/login");
     }
