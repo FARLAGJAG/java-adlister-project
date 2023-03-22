@@ -67,19 +67,21 @@ public class MySQLAdsDao implements Ads {
         return 0L;
     }
 
-//    public Long update (Ad ad) {
+//    public void update (Ad ad) {
 //        try {
 //        int id = ad.getId();
-//        String updateQuery = "UPDATE ad SET title = ?, description = ? WHERE id LIKE ?";
+
+//        String updateQuery = "UPDATE ads SET title = ?, description = ?, item_condition = ? WHERE id LIKE ?";
+
+
 //        PreparedStatement stmt = connection.prepareStatement(updateQuery);
-//        stmt.setSting(1, (PLACE_HOLDER));
+//        stmt.setSting(1, (getParamater("PLACE_HOLDER")));
 //        stmt.setSting(2, (PLACE_HOLDER));
 //        stmt.setInt(3, (id));
 //        stmt.executeUpdate();
 //        } catch (SQLException e) {
 //            throw new RuntimeException(e);
 //        }
-//        return 0L;
 //    }
 
 
@@ -96,6 +98,20 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException(e);
         }
     }
+
+    public Ad findByBrandId(int brand_id) {
+        try {
+            String searchQuery = "SELECT * FROM ads WHERE brand_id LIKE ?";
+            PreparedStatement stmt = connection.prepareStatement(searchQuery);
+            stmt.setLong(1, brand_id);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            return extractAd(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
@@ -116,11 +132,25 @@ public class MySQLAdsDao implements Ads {
         return ads;
     }
 
+    public void doJoins() {
+        String brandAdQuery = "SELECT * FROM ads JOIN brands ON ads.brand_id =  brands.id";
+        String adUserQuery = "SELECT * FROM ads JOIN users ON ads.user_id = users.id";
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(brandAdQuery);
+            statement.executeUpdate(adUserQuery);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
     public static void main(String[] args) {
-        Ad ad = new Ad("TEST-title","TEST-dEs", "TEST-con", 1,1);
+//        Ad ad = new Ad("TEST-title","TEST-dEs", "TEST-con", 1,1);
 //        DaoFactory.getAdsDao().delete(3);
-        System.out.println(DaoFactory.getAdsDao().findById(2).getTitle());
-        System.out.println(DaoFactory.getAdsDao().all());
+//        System.out.println(DaoFactory.getAdsDao().findById(2).getTitle());
+//        System.out.println(DaoFactory.getAdsDao().all());
+        System.out.println(DaoFactory.getAdsDao().findByBrandId(4));
 
     }
 }

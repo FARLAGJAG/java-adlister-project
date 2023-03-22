@@ -12,4 +12,6 @@ public interface Ads {
     Long delete(int id);
 //    Long update(Ad ad);
     Ad findById(int id);
+
+    Ad findByBrandId(int i);
 }
