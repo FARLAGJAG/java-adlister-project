@@ -51,11 +51,11 @@ public class MySQLUsersDao implements Users {
         }
     }
 
-    public Long delete(String username){
+    public Long delete(int id){
         try {
-            String deleteQuery = "DELETE FROM users WHERE username LIKE ?";
+            String deleteQuery = "DELETE FROM users WHERE id LIKE ?";
             PreparedStatement stmt = connection.prepareStatement(deleteQuery);
-            stmt.setString(1, username);
+            stmt.setInt(1, id);
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
