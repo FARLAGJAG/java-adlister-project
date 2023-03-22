@@ -21,11 +21,9 @@ a.log {
         <div class="collapse navbar d-flex " id="navbarSupportedContent">
             <div class="me-4">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="">BUY</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">SELL</a>
+                        <a class="nav-link" aria-current="page" href="/ads/create">SELL</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -41,11 +39,7 @@ a.log {
                     </li>
                 </ul>
             </div>
-            <form class="d-flex mt-3" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-dark" type="submit">Search</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right ms-4">
+            <ul class="nav navbar-nav navbar-right me-4">
                 <c:if test="${user.name != null}">
                 <li ><a class="log" href="/logout">Logout</a></li>
                 </c:if>
