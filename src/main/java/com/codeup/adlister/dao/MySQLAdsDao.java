@@ -15,9 +15,9 @@ public class MySQLAdsDao implements Ads {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
-                Config.giveURL(),
-                Config.giveUSER(),
-                Config.givePSWD()
+                    Config.giveURL(),
+                    Config.giveUSER(),
+                    Config.givePSWD()
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
@@ -67,25 +67,28 @@ public class MySQLAdsDao implements Ads {
         return 0L;
     }
 
-//    public Long update (Ad ad) {
+//    public void update (Ad ad) {
 //        try {
-//        Long id = ad.getId();
-//        String updateQuery = "UPDATE ad SET title = ?, description = ? WHERE ?";
+//        int id = ad.getId();
+
+//        String updateQuery = "UPDATE ads SET title = ?, description = ?, item_condition = ? WHERE id LIKE ?";
+
+
 //        PreparedStatement stmt = connection.prepareStatement(updateQuery);
-//        stmt.setSting(1, (PLACE_HOLDER));
+//        stmt.setSting(1, (getParamater("PLACE_HOLDER")));
 //        stmt.setSting(2, (PLACE_HOLDER));
-//        stmt.setSting(3, (PLACE_HOLDER));
+//        stmt.setInt(3, (id));
+//        stmt.executeUpdate();
 //        } catch (SQLException e) {
 //            throw new RuntimeException(e);
 //        }
-//        return 0L;
 //    }
 
 
     @Override
     public Ad findById(int id) {
         try {
-        String searchQuery = "SELECT * FROM ads WHERE id LIKE ?";
+            String searchQuery = "SELECT * FROM ads WHERE id LIKE ?";
             PreparedStatement stmt = connection.prepareStatement(searchQuery);
             stmt.setLong(1, id);
             ResultSet rs = stmt.executeQuery();
@@ -96,13 +99,26 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    public List<Ad> findByBrandId(int id) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM ads WHERE brand_id LIKE ?");
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
 
-            rs.getString("title"),
-            rs.getString("description"),
-            rs.getString("item_condition"),
-                rs.getInt("userId"),
+                rs.getString("title"),
+                rs.getString("description"),
+                rs.getString("item_condition"),
+                rs.getInt("user_id"),
                 rs.getInt("brand_id")
         );
     }
@@ -115,11 +131,25 @@ public class MySQLAdsDao implements Ads {
         return ads;
     }
 
+    public void doJoins() {
+        String brandAdQuery = "SELECT * FROM ads JOIN brands ON ads.brand_id =  brands.id";
+        String adUserQuery = "SELECT * FROM ads JOIN users ON ads.user_id = users.id";
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(brandAdQuery);
+            statement.executeUpdate(adUserQuery);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
     public static void main(String[] args) {
-        Ad ad = new Ad("TEST-title","TEST-dEs", "TEST-con", 1,1);
+//        Ad ad = new Ad("TEST-title","TEST-dEs", "TEST-con", 1,1);
 //        DaoFactory.getAdsDao().delete(3);
-        System.out.println(DaoFactory.getAdsDao().findById(2).getTitle());
+//        System.out.println(DaoFactory.getAdsDao().findById(2).getTitle());
         System.out.println(DaoFactory.getAdsDao().all());
+        System.out.println(DaoFactory.getAdsDao().findByBrandId(4));
 
     }
 }

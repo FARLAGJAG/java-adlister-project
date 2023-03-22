@@ -14,14 +14,14 @@
     justify-content: end;
     margin-top: 1em;
 }
-.footer{
+.foot{
     background-color: #1a102d;
 }
-    .color{
+    .colorFooter{
         color: white;
     }
 </style>
-<footer class=" color container-fluid footer  px-5 pt-2">
+<footer class="foot colorFooter container-fluid bottom  px-5 pt-2">
     <section class="row d-flex justify-content-center">
         <div class="footer-info col-4 ">
             <h3 class="">About Us</h3>
@@ -36,15 +36,16 @@
         <div class="footer-info col-4 ">
             <h3 class="d-flex justify-content-center">Categories</h3>
             <ul class="list-group">
-                <li class="list-unstyled "><a class="dropdown-item" href="#">SEGA</a></li>
-                <li class="list-unstyled "><a class="dropdown-item" href="#">NINTENDO</a></li>
-                <li class="list-unstyled "><a class="dropdown-item" href="#">PLAYSTATION</a></li>
-                <li class="list-unstyled "><a class="dropdown-item" href="#">XBOX</a></li>
+                <li class="list-unstyled "><a class="dropdown-item color" href="#">SEGA</a></li>
+                <li class="list-unstyled "><a class="dropdown-item color" href="#">NINTENDO</a></li>
+                <li class="list-unstyled "><a class="dropdown-item color" href="#">PLAYSTATION</a></li>
+                <li class="list-unstyled "><a class="dropdown-item color" href="#">XBOX</a></li>
             </ul>
         </div>
         <div class=" col-4 ">
             <h3 class="d-flex justify-content-end">Company Info</h3>
             <ul class="list">
+                <li class="address list-group-item">Gen-Con, LLC </li>
                 <li class="address list-group-item">600 Navarro St #300 </li>
                 <li class="address list-group-item">San Antonio, Texas 78205</li>
                 <li class="address list-group-item">(210) 802-7289</li>
@@ -52,7 +53,7 @@
             </ul>
         </div>
     </section>
-    <section class="row bottom border-top border-light mt-4">
+    <section class="row bottom  border-top border-light mt-4">
         <div class="col-4">
             <img class="" src="../../img/facebook-48.png" alt="Facebook Logo" style="width: 40px" height="auto"/>
             <img class=""  src="../../img/instagram-48.png" alt="Instagram Logo" style="width: 40px" height="auto"/>

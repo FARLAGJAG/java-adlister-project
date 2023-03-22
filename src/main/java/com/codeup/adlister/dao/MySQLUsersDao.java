@@ -2,6 +2,7 @@ package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
+import com.mysql.cj.xdevapi.Session;
 
 import java.sql.*;
 
@@ -51,6 +52,35 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+    public Long delete(String username){
+        try {
+            String deleteQuery = "DELETE FROM users WHERE username LIKE ?";
+            PreparedStatement stmt = connection.prepareStatement(deleteQuery);
+            stmt.setString(1, username);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return 0L;
+    }
+
+    public Long update (String username, String email, int id) {
+        try {
+            String updateQuery = "UPDATE users SET username = ?, email = ? WHERE id like ?";
+            PreparedStatement stmt = connection.prepareStatement(updateQuery);
+            stmt.setString(1, (username));
+            stmt.setString(2, (email));
+            stmt.setInt(3, (id));
+
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return 0L;
+    }
+
+
+
     private User extractUser(ResultSet rs) throws SQLException {
         if (! rs.next()) {
             return null;
@@ -61,6 +91,11 @@ public class MySQLUsersDao implements Users {
             rs.getString("email"),
             rs.getString("password")
         );
+    }
+
+
+    public static void main(String[] args) {
+
     }
 
 }
