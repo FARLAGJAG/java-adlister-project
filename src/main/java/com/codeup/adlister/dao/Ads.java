@@ -14,4 +14,5 @@ public interface Ads {
     Ad findById(int id);
 
     List<Ad> findByBrandId(int i);
+    List<Ad> findByUserId(int i);
 }
