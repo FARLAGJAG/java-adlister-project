@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Ad {
     private int id;
-    private int userId;
+    private int user_id;
     private String title;
     private String description;
 
@@ -15,18 +15,18 @@ public class Ad {
     public Ad() {
 
     }
-    public Ad(int userId, String title, String description, String item_condition) {
-        this.userId = userId;
+    public Ad(int user_id, String title, String description, String item_condition) {
+        this.user_id = user_id;
         this.title = title;
         this.description = description;
         this.item_condition = item_condition;
     }
 
-    public Ad(String title, String description, String item_condition, int userId, int brand_id) {
+    public Ad(String title, String description, String item_condition, int user_id, int brand_id) {
         this.title = title;
         this.description = description;
         this.item_condition = item_condition;
-        this.userId = userId;
+        this.user_id = user_id;
         this.brand_id = brand_id;
     }
 
@@ -59,11 +59,11 @@ public class Ad {
     }
 
     public int getUserId() {
-        return userId;
+        return user_id;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUserId(int user_id) {
+        this.user_id = user_id;
     }
 
     public String getTitle() {
