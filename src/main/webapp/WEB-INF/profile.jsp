@@ -14,7 +14,7 @@
     <div class="container h-50">
         <div class="row">
             <div class="column d-flex justify-content-center">
-                <div class="card bg-dark p-4 m-2 h-90">
+                <div class="card shadow bg-dark p-4 m-2 h-90">
                 <h1 class="p-2 m-0 text-center">Welcome, ${sessionScope.user.username}!</h1>
 
                 <h1 class="text-center">User Profile</h1>
