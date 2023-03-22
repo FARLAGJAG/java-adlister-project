@@ -2,7 +2,7 @@ USE gen_con_db;
 
 # master user
 INSERT INTO users (username, email, password)
-VALUES ('master', 'master@gencon.com', 'master');
+VALUES ('test', 'test@gencon.com', 'test');
 
 # four brands
 INSERT INTO brands (name)

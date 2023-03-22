@@ -1,5 +1,7 @@
 package com.codeup.adlister.models;
 
+import java.util.Objects;
+
 public class Ad {
     private int id;
     private int userId;
@@ -28,7 +30,24 @@ public class Ad {
         this.brand_id = brand_id;
     }
 
-    public Ad(String title, String description, String item_condition) {
+    public Ad(String title, String description, String item_condition, String brand) {
+        this.title = title;
+        this.description = description;
+        this.item_condition = item_condition;
+        switch (brand) {
+            case "Nintendo":
+                this.brand_id = 2;
+                break;
+            case "Playstation":
+                this.brand_id = 4;
+                break;
+            case "Sega":
+                this.brand_id = 1;
+                break;
+            case "Xbox":
+                this.brand_id = 3;
+                break;
+        }
     }
 
     public int getId() {

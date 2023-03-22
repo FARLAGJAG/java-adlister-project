@@ -20,23 +20,18 @@ public class CreateAdServlet extends HttpServlet {
             return;
         }
         request.getRequestDispatcher("/WEB-INF/ads/create.jsp")
-            .forward(request, response);
+                .forward(request, response);
     }
 
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-
-//        Ad ad = new Ad(
-//
-//            request.getParameter("title"),
-//            request.getParameter("description"),
-//            request.getParameter("item_condition"),
-//            user.getId(),
-//            1
-//
-//
-//        );
-//        DaoFactory.getAdsDao().insert(ad);
-//        response.sendRedirect("/ads");
-//    }
+        Ad ad = new Ad(
+                request.getParameter("title"),
+                request.getParameter("description"),
+                request.getParameter("item_condition"),
+                request.getParameter("brand")
+        );
+        DaoFactory.getAdsDao().insert(ad);
+        response.sendRedirect("/ads");
+    }
 }
