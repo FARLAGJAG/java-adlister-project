@@ -34,7 +34,7 @@ a.log {
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
 
-                        <a class="nav-link color" aria-current="page" href="#">BUY</a>
+                        <a class="nav-link color" aria-current="page" href="/ads">BUY</a>
 
                     </li>
                     <li class="nav-item">
@@ -47,10 +47,10 @@ a.log {
                         </a>
                         <ul class="dropdown-menu">
 
-                            <li><a class="dropdown-item" href="#">NINTENDO</a></li>
-                            <li><a class="dropdown-item" href="#">SEGA</a></li>
-                            <li><a class="dropdown-item" href="#">PLAYSTATION</a></li>
-                            <li><a class="dropdown-item" href="#">XBOX</a></li>
+                            <li><a class="dropdown-item" href="/nintendoAds">NINTENDO</a></li>
+                            <li><a class="dropdown-item" href="/segaAds">SEGA</a></li>
+                            <li><a class="dropdown-item" href="/playstationAds">PLAYSTATION</a></li>
+                            <li><a class="dropdown-item" href="/xboxAds">XBOX</a></li>
                         </ul>
                     </li>
                 </ul>

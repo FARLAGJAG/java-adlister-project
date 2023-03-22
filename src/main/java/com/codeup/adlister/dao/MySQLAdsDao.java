@@ -15,9 +15,9 @@ public class MySQLAdsDao implements Ads {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
-                Config.giveURL(),
-                Config.giveUSER(),
-                Config.givePSWD()
+                    Config.giveURL(),
+                    Config.giveUSER(),
+                    Config.givePSWD()
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
@@ -88,7 +88,7 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Ad findById(int id) {
         try {
-        String searchQuery = "SELECT * FROM ads WHERE id LIKE ?";
+            String searchQuery = "SELECT * FROM ads WHERE id LIKE ?";
             PreparedStatement stmt = connection.prepareStatement(searchQuery);
             stmt.setLong(1, id);
             ResultSet rs = stmt.executeQuery();
@@ -99,16 +99,15 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-    public Ad findByBrandId(int brand_id) {
+    public List<Ad> findByBrandId(int id) {
+        PreparedStatement stmt = null;
         try {
-            String searchQuery = "SELECT * FROM ads WHERE brand_id LIKE ?";
-            PreparedStatement stmt = connection.prepareStatement(searchQuery);
-            stmt.setLong(1, brand_id);
+            stmt = connection.prepareStatement("SELECT * FROM ads WHERE brand_id LIKE ?");
+            stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
-            rs.next();
-            return extractAd(rs);
+            return createAdsFromResults(rs);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Error retrieving all ads.", e);
         }
     }
 
@@ -116,9 +115,9 @@ public class MySQLAdsDao implements Ads {
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
 
-            rs.getString("title"),
-            rs.getString("description"),
-            rs.getString("item_condition"),
+                rs.getString("title"),
+                rs.getString("description"),
+                rs.getString("item_condition"),
                 rs.getInt("user_id"),
                 rs.getInt("brand_id")
         );
@@ -149,7 +148,7 @@ public class MySQLAdsDao implements Ads {
 //        Ad ad = new Ad("TEST-title","TEST-dEs", "TEST-con", 1,1);
 //        DaoFactory.getAdsDao().delete(3);
 //        System.out.println(DaoFactory.getAdsDao().findById(2).getTitle());
-//        System.out.println(DaoFactory.getAdsDao().all());
+        System.out.println(DaoFactory.getAdsDao().all());
         System.out.println(DaoFactory.getAdsDao().findByBrandId(4));
 
     }
