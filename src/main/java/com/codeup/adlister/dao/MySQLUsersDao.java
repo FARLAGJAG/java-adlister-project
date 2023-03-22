@@ -94,8 +94,4 @@ public class MySQLUsersDao implements Users {
     }
 
 
-    public static void main(String[] args) {
-
-    }
-
 }
