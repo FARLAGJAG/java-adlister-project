@@ -15,8 +15,8 @@ public class DeleteProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getSession().removeAttribute("user");
         req.getSession().invalidate();
-        int id = req.getParameter(user.id);
-        DaoFactory.getUsersDao().delete(id);
+//        DaoFactory.getUsersDao().findByUsername(username);
+        DaoFactory.getUsersDao().delete(username);
         resp.sendRedirect("/login");
     }
 }
