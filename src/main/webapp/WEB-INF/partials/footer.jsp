@@ -4,7 +4,7 @@
         <jsp:param name="GEN*CON" value="GEN*CON"/>
     </jsp:include>
 </head>
-<footer class="foot colorFooter container-fluid bottom  px-5 pt-2">
+<footer class="foot colorFooter container-fluid bottom  px-5 pt-3">
     <section class="row d-flex justify-content-center">
         <div class="footer-info col-4 ">
             <h3 class="">About Us</h3>
@@ -19,10 +19,10 @@
         <div class="footer-info col-4 ">
             <h3 class="d-flex justify-content-center">Categories</h3>
             <ul class="list-group">
-                <li class="list-unstyled "><a class="dropdown-item color" href="#">SEGA</a></li>
-                <li class="list-unstyled "><a class="dropdown-item color" href="#">NINTENDO</a></li>
-                <li class="list-unstyled "><a class="dropdown-item color" href="#">PLAYSTATION</a></li>
-                <li class="list-unstyled "><a class="dropdown-item color" href="#">XBOX</a></li>
+                <li class="list-unstyled "><a class="dropdown-item color" href="/segaAds">SEGA</a></li>
+                <li class="list-unstyled "><a class="dropdown-item color" href="/nintendoAds">NINTENDO</a></li>
+                <li class="list-unstyled "><a class="dropdown-item color" href="/playstationAds">PLAYSTATION</a></li>
+                <li class="list-unstyled "><a class="dropdown-item color" href="/xboxAds">XBOX</a></li>
             </ul>
         </div>
         <div class=" col-4 ">
