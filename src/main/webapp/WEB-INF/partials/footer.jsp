@@ -2,7 +2,7 @@
 
 <style>
     .footer-info {
-        border-right: 1px solid black;
+        border-right: 1px solid white;
     }
     .dropdown-item{
         display: flex;
@@ -14,8 +14,14 @@
     justify-content: end;
     margin-top: 1em;
 }
+.footer{
+    background-color: #1a102d;
+}
+    .color{
+        color: white;
+    }
 </style>
-<footer class=" container-fluid footer bg-body-secondary px-5 pt-2">
+<footer class=" color container-fluid footer  px-5 pt-2">
     <section class="row d-flex justify-content-center">
         <div class="footer-info col-4 ">
             <h3 class="">About Us</h3>
@@ -46,7 +52,7 @@
             </ul>
         </div>
     </section>
-    <section class="row bottom border-top border-dark mt-4">
+    <section class="row bottom border-top border-light mt-4">
         <div class="col-4">
             <img class="" src="../../img/facebook-48.png" alt="Facebook Logo" style="width: 40px" height="auto"/>
             <img class=""  src="../../img/instagram-48.png" alt="Instagram Logo" style="width: 40px" height="auto"/>
