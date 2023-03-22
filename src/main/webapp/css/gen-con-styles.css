@@ -1,0 +1,102 @@
+/********************** Footer **********************/
+
+.footer-info {
+    border-right: 1px solid white;
+}
+.dropdown-item{
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+.address{
+    display: flex;
+    justify-content: end;
+    margin-top: 1em;
+}
+.foot{
+    background-color: #1a102d;
+}
+.colorFooter{
+    color: white;
+}
+
+
+/********************** Navbar **********************/
+
+
+.logo {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 3em;
+}
+
+.color{
+    color: white;
+}
+.color:hover{
+    color: goldenrod;
+}
+
+a.log {
+    text-decoration: none;
+}
+.navbar{
+    background-color: #1a102d;
+}
+
+/********************** Index **********************/
+
+.sample {
+    box-shadow: inset 5px 5px 30px 15px black;
+    background: linear-gradient(91.7deg, rgb(50, 25, 79) -4.3%, rgb(122, 101, 149) 101.8%);
+    padding-top: 1em;
+}
+.top-img{
+    background-image: url("/img/retro-consol.png");
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: contain;
+}
+
+.extend {
+    height: 25vh;
+    width: 100%;
+}
+
+.top-img-banner {
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: rgba(38, 20, 80, 0.51);
+    width: 50%;
+}
+
+
+.card-bg {
+    background-color: #d2cfc3;
+}
+
+/********************** Login **********************/
+#login {
+    height: 60%;
+}
+
+/********************** Register **********************/
+
+
+
+/********************** Profile **********************/
+
+.user-style {
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: whitesmoke;
+    background: linear-gradient(89.7deg, rgb(0, 32, 95) 2.8%, rgb(132, 53, 142) 97.8%);
+}
+
+.shadow {
+    box-shadow: 0 0 20px 0 white !important;
+}
+
+/********************** Sell **********************/
+

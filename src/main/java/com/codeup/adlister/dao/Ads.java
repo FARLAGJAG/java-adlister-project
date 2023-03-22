@@ -10,7 +10,7 @@ public interface Ads {
     // insert a new ad and return the new ad's id
     Long insert(Ad ad);
     Long delete(int id);
-//    Long update(Ad ad);
+    Long update (String title, String description, String itemCon, int id);
     Ad findById(int id);
 
     List<Ad> findByBrandId(int i);
