@@ -38,6 +38,7 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public Long insert(Ad ad) {
+        System.out.println(ad.getBrandId());
         try {
             String insertQuery = "INSERT INTO ads(title, description,item_condition,user_id, brand_id) VALUES (?, ?, ?,?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
@@ -70,10 +71,10 @@ public class MySQLAdsDao implements Ads {
 //    public void update (Ad ad) {
 //        try {
 //        int id = ad.getId();
-
+//
 //        String updateQuery = "UPDATE ads SET title = ?, description = ?, item_condition = ? WHERE id LIKE ?";
-
-
+//
+//
 //        PreparedStatement stmt = connection.prepareStatement(updateQuery);
 //        stmt.setSting(1, (getParamater("PLACE_HOLDER")));
 //        stmt.setSting(2, (PLACE_HOLDER));

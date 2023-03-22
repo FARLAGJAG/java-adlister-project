@@ -34,20 +34,7 @@ public class Ad {
         this.title = title;
         this.description = description;
         this.item_condition = item_condition;
-        switch (brand) {
-            case "Nintendo":
-                this.brand_id = 2;
-                break;
-            case "Playstation":
-                this.brand_id = 4;
-                break;
-            case "Sega":
-                this.brand_id = 1;
-                break;
-            case "Xbox":
-                this.brand_id = 3;
-                break;
-        }
+        this.brand_id = createBrandId(brand);
     }
 
     public int getId() {
@@ -96,5 +83,22 @@ public class Ad {
 
     public void setBrandId(int brand_id){
         this.brand_id = brand_id;
+    }
+
+    public static int createBrandId (String brand)  {
+        switch (brand) {
+            case "nintendo":
+                return 2;
+
+            case "playstation":
+                return 4;
+
+            case "sega":
+                return 1;
+
+            case "xbox":
+                return 3;
+                default: return 0;
+        }
     }
 }
