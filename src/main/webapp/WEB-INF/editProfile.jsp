@@ -17,8 +17,8 @@
 <body class="user-style">
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
-<div class="page-wrapper mt-5 pt-5" id="login">
-    <div class="container-fluid d-flex justify-content-center mt-5">
+<div id="moreHeight" class="page-wrapper mt-5 pt-5" id="login">
+    <div class="container-fluid d-flex justify-content-center ">
             <div class="edit column card d-flex justify-content-center shadow bg-dark p-4 m-5">
                 <div class="vh-75">
                     <h1>EDIT PROFILE</h1>
