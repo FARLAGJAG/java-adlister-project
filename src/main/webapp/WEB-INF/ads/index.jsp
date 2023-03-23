@@ -13,14 +13,14 @@
         <div class="row d-flex justify-content-between my-5">
 
                 <c:forEach var="ad" items="${ads}">
-        <div class="card col-4 card-bg m-3 p-2" style="width: 18rem; height: auto">
+        <div class="card col-4 card-bg shadow bg-dark text-light m-3 p-2" style="width: 18rem; height: auto">
             <div class="card-body">
                     <div class="col-md-6">
                         <h2 class="card-title">${ad.title}</h2>
                         <p class="card-text">${ad.description}</p>
 
                     </div>
-                    <a href="/details" class="btn btn-dark">View Console</a>
+                    <a href="/details" class="btn btn-light">View Console</a>
 
 
 
