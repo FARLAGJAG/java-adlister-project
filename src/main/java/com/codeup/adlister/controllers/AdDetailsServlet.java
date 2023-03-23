@@ -13,8 +13,8 @@ public class AdDetailsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         // set the object as an attribute for front end //
-//        int thisID = Integer.parseInt(req.getParameter("id")) ;
-//        req.setAttribute("thisAd", DaoFactory.getAdsDao().findById(thisID));
+        int thisID = Integer.parseInt(req.getParameter("id")) ;
+        req.setAttribute("thisAd", DaoFactory.getAdsDao().findById(thisID));
         req.getRequestDispatcher("/WEB-INF/ads/details.jsp")
                 .forward(req, resp);
     }

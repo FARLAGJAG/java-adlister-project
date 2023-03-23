@@ -20,7 +20,7 @@
                         <p class="card-text">${ad.description}</p>
 
                     </div>
-                    <a href="/details" class="btn btn-light">View Console</a>
+                    <a href="/details?id=${ad.id}" class="btn btn-light">View Console</a>
 
 
 
