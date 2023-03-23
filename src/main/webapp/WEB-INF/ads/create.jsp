@@ -5,9 +5,9 @@
         <jsp:param name="title" value="Create a new Ad"/>
     </jsp:include>
 </head>
-<body class="user-style">
+<body id="maxHeight" class="user-style">
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<div id="moreHeight" class="container mt-3 d-flex justify-content-center">
+<div  class="container mt-3 d-flex justify-content-center">
     <div class="row">
         <h1>Create a new Ad</h1>
         <form action="/ads/create" method="post">
