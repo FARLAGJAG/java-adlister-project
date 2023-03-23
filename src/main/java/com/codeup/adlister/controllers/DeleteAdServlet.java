@@ -14,9 +14,10 @@ import java.io.IOException;
 public class DeleteAdServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        TODO how do i find the title of the specific add i want to delete
-//        DaoFactory.getAdsDao().delete(DaoFactory.getAdsDao().findByTitle());
+        int id = Integer.parseInt(req.getParameter("ad_id"));
+        DaoFactory.getAdsDao().delete(id);
         resp.sendRedirect("/profile");
     }
 }

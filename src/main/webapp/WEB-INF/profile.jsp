@@ -39,8 +39,16 @@
                         <h2>>${ad.title}</h2>
                         <p>${ad.description}</p>
 
-                        <button>Edit</button>
-                        <button>Delete</button>
+
+                        <form action="/editAd" method="get">
+                            <input type="hidden" name="ad_id" value="${ad.id}">
+                            <input class="btn btn-danger btn-sm" type="submit" value="edit">
+                        </form>
+
+                        <form action="/deleteAd" method="post">
+                            <input type="hidden" name="ad_id" value="${ad.id}">
+                            <input class="btn btn-danger btn-sm" type="submit" value="Delete">
+                        </form>
 
                     </div>
                 </c:forEach>
