@@ -47,6 +47,8 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+
+
     @Override
     public Long insert(Ad ad) {
         System.out.println(ad.getBrandId());
@@ -118,6 +120,19 @@ public class MySQLAdsDao implements Ads {
             String searchQuery = "SELECT * FROM ads WHERE id LIKE ?";
             PreparedStatement stmt = connection.prepareStatement(searchQuery);
             stmt.setLong(1, id);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            return extractAd(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Ad findByTitle(String title) {
+        try {
+            String searchQuery = "SELECT * FROM ads WHERE title LIKE ?";
+            PreparedStatement stmt = connection.prepareStatement(searchQuery);
+            stmt.setString(1, title);
             ResultSet rs = stmt.executeQuery();
             rs.next();
             return extractAd(rs);
