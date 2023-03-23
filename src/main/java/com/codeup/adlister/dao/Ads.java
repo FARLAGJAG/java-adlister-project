@@ -13,6 +13,7 @@ public interface Ads {
     Long update (String title, String description, String itemCon, int id);
     Ad findById(int id);
 
+    Ad findByTitle(String title);
     List<Ad> findByBrandId(int i);
     List<Ad> findByUserId(int i);
 }

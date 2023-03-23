@@ -38,8 +38,10 @@
                     <div class="card shadow bg-dark m-3 p-2">
                         <h2>>${ad.title}</h2>
                         <p>${ad.description}</p>
+
                         <button>Edit</button>
                         <button>Delete</button>
+
                     </div>
                 </c:forEach>
             </div>

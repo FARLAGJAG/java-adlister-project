@@ -7,7 +7,9 @@
 <body class="user-style">
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <h1>Details</h1>
+
 <jsp:include page="/WEB-INF/partials/footer.jsp"/>
 <jsp:include page="/WEB-INF/partials/scripts.jsp"/>
+
 </body>
 </html>
