@@ -42,6 +42,16 @@
                         <button>Edit</button>
                         <button>Delete</button>
 
+                        <form action="/editAd" method="post">
+                            <input type="hidden" name="ad_id" value="${ad.id}">
+                            <input class="btn btn-danger btn-sm" type="submit" value="edit">
+                        </form>
+
+                        <form action="/deleteAd" method="post">
+                            <input type="hidden" name="ad_id" value="${ad.id}">
+                            <input class="btn btn-danger btn-sm" type="submit" value="Delete">
+                        </form>
+
                     </div>
                 </c:forEach>
             </div>

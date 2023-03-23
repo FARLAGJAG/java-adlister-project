@@ -74,6 +74,7 @@ public class MySQLAdsDao implements Ads {
             String deleteQuery = "DELETE FROM ads WHERE id LIKE ?";
             PreparedStatement stmt = connection.prepareStatement(deleteQuery);
             stmt.setInt(1, id);
+            System.out.println(id);
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -106,6 +107,7 @@ public class MySQLAdsDao implements Ads {
             stmt.setString(2, (description));
             stmt.setString(3, (itemCon));
             stmt.setInt(4, (id));
+            System.out.println(id);
 
             stmt.executeUpdate();
         } catch (SQLException e) {
