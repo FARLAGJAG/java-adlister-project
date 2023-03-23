@@ -6,9 +6,9 @@
     </jsp:include>
 </head>
 
-<body>
+<body class="user-style">
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-    <div id="moreHeight" class="container">
+    <div id="moreHeight" class="container mt-5">
 
         <h1>Please Log In</h1>
         <form action="/login" method="POST">

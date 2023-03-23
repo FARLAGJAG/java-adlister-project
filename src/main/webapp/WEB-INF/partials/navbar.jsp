@@ -26,7 +26,6 @@
                             SHOP BY BRAND
                         </a>
                         <ul class="dropdown-menu">
-
                             <li><a class="dropdown-item" href="/nintendoAds">NINTENDO</a></li>
                             <li><a class="dropdown-item" href="/segaAds">SEGA</a></li>
                             <li><a class="dropdown-item" href="/playstationAds">PLAYSTATION</a></li>
