@@ -40,8 +40,8 @@
                         <p>${ad.description}</p>
                     </div>
                     <div>
-                        <button>Edit</button>
-                        <button>Delete</button>
+                        <a href="/editAd">edit</a>
+                        <a href="/deleteAd">delete</a>
                     </div>
                 </c:forEach>
             </div>
