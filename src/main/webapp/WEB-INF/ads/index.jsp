@@ -22,16 +22,10 @@
                     </div>
                     <a href="/details" class="btn btn-dark">View Console</a>
 
-<%--                    <c:forEach var="ad" items="${adsToEdit}">--%>
-<%--                        <c:if test="${ad1.getUserId() == ad.getUserId()}">--%>
 
-<%--                            <a href="/editAd" class="btn btn-dark">edit</a>--%>
-<%--                            <a href="/deleteAd" class="btn btn-dark">delete</a>--%>
-
-<%--                        </c:if>--%>
-<%--                    </c:forEach>--%>
 
                 </div>
+        </div>
             </c:forEach>
 
 
