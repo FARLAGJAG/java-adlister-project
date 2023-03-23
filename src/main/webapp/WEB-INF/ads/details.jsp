@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -13,9 +14,13 @@
              <div class="card col-4 card-bg shadow bg-dark text-light m-3 p-2" style="width: 18rem; height: auto">
                     <div class="card-body d-flex justify-content-center ">
                         <div class="col-md-6">
-                            <h2 class="card-title">Title</h2>
-                            <p class="card-text">Description</p>
+                            <h2 class="card-title">
+                                <c:out value="${thisAd.title}" />
+                            </h2>
+                            <p class="card-text">
+                                <c:out value="${thisAd.description}" />
 
+                            </p>
                         </div>
                     </div>
                 </div>
