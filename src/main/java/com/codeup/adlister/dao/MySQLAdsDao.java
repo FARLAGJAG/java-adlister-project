@@ -72,7 +72,7 @@ public class MySQLAdsDao implements Ads {
     public Long delete(int id) {
         try {
             String deleteQuery = "DELETE FROM ads WHERE id LIKE ?";
-            PreparedStatement stmt = connection.prepareStatement(deleteQuery);
+            PreparedStatement stmt = connection.prepareStatement(deleteQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setInt(1, id);
             System.out.println(id);
             stmt.executeUpdate();
@@ -159,6 +159,7 @@ public class MySQLAdsDao implements Ads {
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
 
+                rs.getInt("id"),
                 rs.getString("title"),
                 rs.getString("description"),
                 rs.getString("item_condition"),

@@ -15,17 +15,18 @@
     <div class="edit column card d-flex justify-content-center shadow bg-dark p-4 m-5">
       <div class="vh-75">
         <h1>EDIT Ad</h1>
-        <form method="Get" action="/editAd">
+        <form method="post" action="/editAd">
+          <input type="hidden" name="ad_id" value="${ad_id}">
           <label for="title">title</label>
-          <input id="title" name="title" value="${sessionScope.ad.title}">
+          <input id="title" name="title" value="">
           <label for="description">description</label>
-          <input id="description" name="description" value="${sessionScope.ad.description}">
+          <input id="description" name="description" value="">
           <label for="condition">Item Condition</label>
           <select name="condition" id="condition">
             <option value="new">New</option>
             <option value="used">Used</option>
           </select>
-          <button class="btn btn-outline-secondary btn-sm me-3" type="button">submit</button>
+          <button class="btn btn-outline-secondary btn-sm me-3" type="submit">submit</button>
           <br>
 
         </form>

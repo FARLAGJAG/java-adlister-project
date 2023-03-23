@@ -37,6 +37,15 @@ public class Ad {
         this.brand_id = createBrandId(brand);
     }
 
+    public Ad(int id, String title, String description, String item_condition, int user_id, int brand_id) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.item_condition = item_condition;
+        this.user_id = user_id;
+        this.brand_id = brand_id;
+    }
+
     public int getId() {
         return id;
     }
