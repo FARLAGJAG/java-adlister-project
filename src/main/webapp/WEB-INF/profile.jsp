@@ -7,11 +7,10 @@
     </jsp:include>
 
 </head>
-<body>
+<body class="user-style">
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<div class="page-wrapper user-style">
+<div class="page-wrapper ">
     <div class="container">
-        <div class="row">
             <div class="column d-flex justify-content-center m-5">
                 <div class="card shadow bg-dark p-4 m-2">
                 <h1 class="p-2 m-0 text-center">Welcome, ${sessionScope.user.username}!</h1>
@@ -46,7 +45,6 @@
                     </div>
                 </c:forEach>
             </div>
-        </div>
     </div>
 </div>
 
