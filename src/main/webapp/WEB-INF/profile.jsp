@@ -33,26 +33,29 @@
 
                 </section>
             </div>
+
             <div class="col-8 mt-3">
                 <c:forEach var="ad" items="${ads}">
                     <div class="card shadow bg-dark m-3 p-2">
                         <h2>>${ad.title}</h2>
                         <p>${ad.description}</p>
+                        <a href="/editAd?id=${ad.id}" class="btn btn-light">edit</a>
+                        <a href="/deleteAd?id=${ad.id}" class="btn btn-light">delete</a>
 
+<%--                        <form action="/editAd" method="get">--%>
+<%--                            <input type="hidden" name="ad_id" value="${ad.id}">--%>
+<%--                            <input class="btn btn-danger btn-sm" type="submit" value="edit">--%>
+<%--                        </form>--%>
 
-                        <form action="/editAd" method="get">
-                            <input type="hidden" name="ad_id" value="${ad.id}">
-                            <input class="btn btn-danger btn-sm" type="submit" value="edit">
-                        </form>
-
-                        <form action="/deleteAd" method="post">
-                            <input type="hidden" name="ad_id" value="${ad.id}">
-                            <input class="btn btn-danger btn-sm" type="submit" value="Delete">
-                        </form>
+<%--                        <form action="/deleteAd" method="post">--%>
+<%--                            <input type="hidden" name="ad_id" value="${ad.id}">--%>
+<%--                            <input class="btn btn-danger btn-sm" type="submit" value="Delete">--%>
+<%--                        </form>--%>
 
                     </div>
                 </c:forEach>
             </div>
+
         </div>
     </div>
 </div>
